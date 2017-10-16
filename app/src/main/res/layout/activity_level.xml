@@ -31,20 +31,23 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="BAŞLANGIÇ"
+            android:text="Beginner"
             android:layout_marginBottom="30dp"
+            android:onClick="Beginner"
             android:layout_marginTop="60dp">
 
         </Button>
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="ORTA"
+            android:text="Intermediate"
+            android:onClick="Intermediate"
             android:layout_marginBottom="30dp"></Button>
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="İLERİ"
+            android:text="Advanced"
+            android:onClick="Advanced"
             android:layout_marginBottom="30dp"></Button>
 
 

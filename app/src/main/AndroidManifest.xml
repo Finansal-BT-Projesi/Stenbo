@@ -16,7 +16,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".LevelActivity" />
-        <activity android:name=".StoryActivity"></activity>
+        <activity android:name=".StoryActivity" />
+        <activity android:name=".BeginnerActivity" />
+        <activity android:name=".IntermediateActivity" />
+        <activity android:name=".AdvancedActivity"></activity>
     </application>
 
 </manifest>
