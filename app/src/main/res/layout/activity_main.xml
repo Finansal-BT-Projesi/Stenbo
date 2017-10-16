@@ -32,6 +32,7 @@
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+<<<<<<< HEAD
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/button"
@@ -39,4 +40,19 @@
         android:layout_marginStart="62dp"
         android:layout_marginTop="22dp"
         android:text="Button" />
+=======
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="Button" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/button"
+        android:layout_alignStart="@+id/button"
+        android:layout_below="@+id/textView"
+        android:layout_marginTop="48dp"
+        android:text="TextView" />
+>>>>>>> f96f082eda0fd5982022e25f7e8018dad01f9c2a
 </RelativeLayout>
