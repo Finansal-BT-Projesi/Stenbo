@@ -27,8 +27,12 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/imageView"
         android:layout_centerHorizontal="true"
+        android:layout_marginLeft="20dp"
         android:layout_marginTop="73dp"
-        android:text="iNGİLİZCE KISA HİKAYELER"
-        android:gravity="center"/>
+        android:fontFamily="monospace"
+        android:gravity="center"
+        android:text="İNGİLİZCE KISA HİKAYELER"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textSize="24sp" />
 
 </LinearLayout>

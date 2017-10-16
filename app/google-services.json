@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "936039325221",
+    "firebase_url": "https://stenbo-78fc7.firebaseio.com",
+    "project_id": "stenbo-78fc7",
+    "storage_bucket": "stenbo-78fc7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:936039325221:android:4def0944fc5d5f32",
+        "android_client_info": {
+          "package_name": "com.finansal.bt.project"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "936039325221-lqhl4ds36o0iaar143upmgp02f5ni77i.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.finansal.bt.project",
+            "certificate_hash": "3dfad329ab0ff90c42d394d841cc78f8307a4655"
+          }
+        },
+        {
+          "client_id": "936039325221-2pcv0evd397e47dsnlur497n3e8kt8o9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB80XAVNqDGb-71ySk8innLgpnpdQzDg7k"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "936039325221-2pcv0evd397e47dsnlur497n3e8kt8o9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
