@@ -2,57 +2,55 @@
 
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
+    android:background="@drawable/arkaplan"
     tools:context="com.finansal.bt.project.LevelActivity">
-
-
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
-        android:layout_gravity="center_horizontal"
         android:orientation="vertical"
-        >
-        <TextView
-            android:id="@+id/textView2"
-           android:textSize="20dp"
-            android:layout_marginBottom="10dp"
-            android:layout_marginTop="60dp"
-            android:layout_gravity="center"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="SEVİYE SEÇİN" />
+        android:weightSum="1">
+
         <Button
+            android:id="@+id/button3"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Beginner"
+            android:layout_height="100dp"
             android:layout_marginBottom="30dp"
-            android:onClick="Beginner"
-            android:layout_marginTop="60dp">
+            android:layout_marginTop="60dp"
+
+            android:background="@drawable/beg"
+            android:onClick="Beginner">
 
         </Button>
+
         <Button
+            android:id="@+id/button4"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Elementary"
-            android:onClick="Elementary"
-            android:layout_marginBottom="30dp"></Button>
+            android:layout_height="100dp"
+            android:layout_marginBottom="30dp"
+
+            android:background="@drawable/inter"
+            android:onClick="Elementary"></Button>
+
         <Button
+            android:id="@+id/button2"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Intermediate"
-            android:onClick="Intermediate"
-            android:layout_marginBottom="30dp"></Button>
+
+            android:layout_height="100dp"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/adv"></Button>
 
 
     </LinearLayout>
-
 
 
 </LinearLayout>
