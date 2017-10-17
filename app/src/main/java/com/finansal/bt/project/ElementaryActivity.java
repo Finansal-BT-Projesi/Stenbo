@@ -27,10 +27,10 @@ public class ElementaryActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_intermediate);
+        setContentView(R.layout.activity_elementary);
         this.setTitle("Elementary");
 
-        listem=(ListView)findViewById(R.id.listeIntermediate);
+        listem=(ListView)findViewById(R.id.listeElementary);
         final CustomAdapter adapter=new CustomAdapter(this,basliklar);
         listem.setAdapter(adapter);
 
