@@ -21,33 +21,33 @@
         android:weightSum="1">
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/btnBeginner"
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_marginBottom="30dp"
             android:layout_marginTop="60dp"
 
-            android:background="@drawable/beg"
+            android:background="@drawable/btnbeginner"
             android:onClick="Beginner">
 
         </Button>
 
         <Button
-            android:id="@+id/button4"
+            android:id="@+id/btnElementary"
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_marginBottom="30dp"
 
-            android:background="@drawable/inter"
+            android:background="@drawable/btnelementery"
             android:onClick="Elementary"></Button>
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/btnAdvanced"
             android:layout_width="match_parent"
             android:onClick="Intermediate1"
             android:layout_height="100dp"
             android:layout_marginBottom="30dp"
-            android:background="@drawable/adv"></Button>
+            android:background="@drawable/btnintermediate"></Button>
 
 
     </LinearLayout>
