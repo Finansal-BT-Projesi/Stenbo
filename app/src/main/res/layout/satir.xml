@@ -38,7 +38,7 @@
                 android:id="@+id/beginnerIsim"
                 android:layout_toRightOf="@+id/beginnerResim"
                 android:layout_alignParentTop="true"
-                android:textSize="23sp"
+                android:textSize="20sp"
                 android:paddingTop="23dp"
 
                 />

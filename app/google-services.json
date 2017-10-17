@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "936039325221-75pl0smapf4gkg13kd9rgg1o0fqnbvsf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.finansal.bt.project",
+            "certificate_hash": "b71815dce885209bb6f72499573560b96da7fc99"
+          }
+        },
+        {
           "client_id": "936039325221-lqhl4ds36o0iaar143upmgp02f5ni77i.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
