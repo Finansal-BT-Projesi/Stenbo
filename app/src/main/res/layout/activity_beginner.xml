@@ -1,21 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.finansal.bt.project.BeginnerActivity">
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Button"
-        tools:layout_constraintTop_creator="1"
-        android:layout_marginStart="91dp"
-        android:layout_marginTop="183dp"
-        tools:layout_constraintLeft_creator="1"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginLeft="206dp" />
-</android.support.constraint.ConstraintLayout>
+
+
+        <ListView
+            android:id="@+id/listeBeginner"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:layout_editor_absoluteY="8dp"
+            tools:layout_editor_absoluteX="0dp"
+            android:divider="@null">
+
+        </ListView>
+
+
+</RelativeLayout>
