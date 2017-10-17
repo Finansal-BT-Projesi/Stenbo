@@ -39,12 +39,12 @@
             android:layout_marginBottom="30dp"
 
             android:background="@drawable/inter"
-            android:onClick="Elementary"></Button>
+            android:onClick="Intermediate"></Button>
 
         <Button
             android:id="@+id/button2"
             android:layout_width="match_parent"
-
+            android:onClick="Advanced"
             android:layout_height="100dp"
             android:layout_marginBottom="30dp"
             android:background="@drawable/adv"></Button>
