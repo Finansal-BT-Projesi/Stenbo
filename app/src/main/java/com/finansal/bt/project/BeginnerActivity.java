@@ -31,6 +31,8 @@ public class BeginnerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_beginner);
 
+        this.setTitle("Beginner");
+
         listem=(ListView)findViewById(R.id.listeBeginner);
         final CustomAdapter adapter=new CustomAdapter(this,basliklar);
         listem.setAdapter(adapter);
