@@ -16,12 +16,12 @@ public class LevelActivity extends AppCompatActivity {
         Intent ıntent=new Intent(this,BeginnerActivity.class);
         this.startActivity(ıntent);
     }
-    public void Intermediate(View v){
-        Intent ıntent=new Intent(this,IntermediateActivity.class);
+    public void Elementary(View v){
+        Intent ıntent=new Intent(this,ElementaryActivity.class);
         this.startActivity(ıntent);
     }
-    public void Advanced(View v){
-        Intent ıntent=new Intent(this,AdvancedActivity.class);
+    public void Intermediate1(View v){
+        Intent ıntent=new Intent(this,IntermediateActivity.class);
         this.startActivity(ıntent);
     }
 }
