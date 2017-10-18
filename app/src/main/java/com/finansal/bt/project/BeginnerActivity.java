@@ -24,6 +24,7 @@ public class BeginnerActivity extends AppCompatActivity {
     final List<String>basliklar=new ArrayList<String>();
     ListView listem;
     ProgressBar pb;
+    public static boolean beginner;
 
     FirebaseDatabase db;
     DatabaseReference oku;
@@ -34,6 +35,9 @@ public class BeginnerActivity extends AppCompatActivity {
         setContentView(R.layout.activity_beginner);
 
         this.setTitle("Beginner");
+        beginner=true;
+        ElementaryActivity.elementary=false;
+        IntermediateActivity.intermediate=false;
 
         listem=(ListView)findViewById(R.id.listeBeginner);
         pb=(ProgressBar)findViewById(R.id.progressBar3);

@@ -19,7 +19,7 @@ import java.util.List;
 
 public class IntermediateActivity extends AppCompatActivity {
 
-
+    public static boolean intermediate;
     final List<String> basliklar=new ArrayList<String>();
     ListView listem;
     ProgressBar pb;
@@ -32,6 +32,10 @@ public class IntermediateActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_intermediate);
         this.setTitle("Intermediate");
+
+        intermediate=true;
+        ElementaryActivity.elementary=false;
+        BeginnerActivity.beginner=false;
 
         listem=(ListView)findViewById(R.id.listeIntermediate);
         pb=(ProgressBar)findViewById(R.id.progressBar5);

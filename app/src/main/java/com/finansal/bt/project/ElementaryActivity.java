@@ -19,6 +19,7 @@ import java.util.List;
 
 public class ElementaryActivity extends AppCompatActivity {
 
+    public static boolean elementary;
     final List<String> basliklar=new ArrayList<String>();
     ListView listem;
 
@@ -31,6 +32,10 @@ public class ElementaryActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_elementary);
         this.setTitle("Elementary");
+
+        elementary=true;
+        IntermediateActivity.intermediate=false;
+        BeginnerActivity.beginner=false;
 
         listem=(ListView)findViewById(R.id.listeElementary);
         pb=(ProgressBar)findViewById(R.id.progressBar4);
