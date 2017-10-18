@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -22,6 +23,7 @@ public class BeginnerActivity extends AppCompatActivity {
 
     final List<String>basliklar=new ArrayList<String>();
     ListView listem;
+    ProgressBar pb;
 
     FirebaseDatabase db;
     DatabaseReference oku;
@@ -34,6 +36,8 @@ public class BeginnerActivity extends AppCompatActivity {
         this.setTitle("Beginner");
 
         listem=(ListView)findViewById(R.id.listeBeginner);
+        pb=(ProgressBar)findViewById(R.id.progressBar3);
+
         final CustomAdapter adapter=new CustomAdapter(this,basliklar);
         listem.setAdapter(adapter);
 
@@ -45,8 +49,9 @@ public class BeginnerActivity extends AppCompatActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for(DataSnapshot key:dataSnapshot.getChildren()){
                     basliklar.add(key.getKey().toString());
-
                 }
+                pb.setVisibility(View.INVISIBLE);
+
                 adapter.notifyDataSetChanged();
             }
 
@@ -56,6 +61,10 @@ public class BeginnerActivity extends AppCompatActivity {
             }
         });
 
+
+
+
+
        listem.setOnItemClickListener(new AdapterView.OnItemClickListener() {
            @Override
            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -63,7 +72,7 @@ public class BeginnerActivity extends AppCompatActivity {
             intent.putExtra("baslik", listem.getAdapter().getItem(position).toString());
                startActivity(intent);
 
-               overridePendingTransition(R.anim.from_right,R.anim.left);
+
            }
        });
 

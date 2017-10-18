@@ -14,4 +14,10 @@
         android:divider="@null">
 
     </ListView>
+    <ProgressBar
+        android:id="@+id/progressBar4"
+        style="@android:style/Widget.DeviceDefault.ProgressBar.Large"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_margin="160dp" />
 </RelativeLayout>

@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -21,6 +22,7 @@ public class ElementaryActivity extends AppCompatActivity {
     final List<String> basliklar=new ArrayList<String>();
     ListView listem;
 
+    ProgressBar pb;
     FirebaseDatabase db;
     DatabaseReference oku;
 
@@ -31,6 +33,7 @@ public class ElementaryActivity extends AppCompatActivity {
         this.setTitle("Elementary");
 
         listem=(ListView)findViewById(R.id.listeElementary);
+        pb=(ProgressBar)findViewById(R.id.progressBar4);
         final CustomAdapter adapter=new CustomAdapter(this,basliklar);
         listem.setAdapter(adapter);
 
@@ -44,6 +47,7 @@ public class ElementaryActivity extends AppCompatActivity {
                     basliklar.add(key.getKey().toString());
 
                 }
+                pb.setVisibility(View.INVISIBLE);
                 adapter.notifyDataSetChanged();
             }
 
