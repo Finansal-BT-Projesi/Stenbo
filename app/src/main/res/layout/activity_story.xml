@@ -88,6 +88,8 @@
       android:layout_height="250dp"
       android:text="TextView"
       android:background="#F0E4CE"
+      android:textSize="30px"
+
       />
 
 

@@ -2,6 +2,7 @@ package com.finansal.bt.project;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.graphics.Typeface;
 import android.os.AsyncTask;
 import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
@@ -35,6 +36,7 @@ public class StoryActivity extends AppCompatActivity {
     EditText edt;
     Context context=this;
     String resultString;
+    Typeface tf1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +46,10 @@ public class StoryActivity extends AppCompatActivity {
         Bundle extras=getIntent().getExtras();
         String toolbarBaslik=extras.getString("baslik");
         icerik=(TextView)findViewById(R.id.icerik);
+
+        tf1=Typeface.createFromAsset(getAssets(), "fonts/gfs.ttf");
+
+        icerik.setTypeface(tf1);
 
         db=FirebaseDatabase.getInstance();
 
