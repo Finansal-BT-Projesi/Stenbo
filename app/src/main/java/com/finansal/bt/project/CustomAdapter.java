@@ -2,6 +2,7 @@ package com.finansal.bt.project;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,6 +20,7 @@ public class CustomAdapter extends BaseAdapter{
 
     TextView baslik;
     ImageView resim;
+
     private LayoutInflater mInflater;
     private List<String> isimListesi;
 

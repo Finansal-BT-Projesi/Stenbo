@@ -19,7 +19,7 @@
     <Button
         android:id="@+id/button2"
         android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_height="30dp"
         android:layout_marginLeft="10dp"
         android:backgroundTint="@color/colorPrimaryDark"
         android:background="@drawable/iconsearch"
@@ -29,12 +29,12 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:onClick="searchOnclick"
-        android:layout_marginTop="28dp" />
+        android:layout_marginTop="10dp" />
 
     <EditText
         android:id="@+id/editText"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="30dp"
         android:ems="10"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
@@ -48,8 +48,8 @@
 
     <Button
         android:id="@+id/button4"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:layout_marginTop="10dp"
 
         android:layout_marginRight="10dp"
@@ -61,22 +61,30 @@
     <Button
         android:id="@+id/button3"
         android:backgroundTint="@color/colorPrimaryDark"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:background="@drawable/play"
-        android:layout_marginBottom="11dp"
-        android:layout_alignParentBottom="true"
-        android:layout_toLeftOf="@+id/imageView2"
-        android:layout_toStartOf="@+id/imageView2" />
+        android:layout_toRightOf="@+id/button5"/>
+
+
+ <Button
+     android:id="@+id/button5"
+     android:backgroundTint="@color/colorPrimaryDark"
+     android:layout_width="30dp"
+     android:layout_height="30dp"
+     android:background="@drawable/speaker"
+     android:layout_marginLeft="20dp"
+     android:layout_marginStart="20dp" />
 
  <ScrollView
      android:id="@+id/layoutMenu"
      android:layout_width="match_parent"
-     android:layout_height="250dp"
-     android:layout_marginTop="16dp"
+     android:layout_height="wrap_content"
+     android:layout_marginTop="8dp"
      android:layout_below="@+id/button2"
      android:layout_alignParentLeft="true"
      android:layout_alignParentStart="true"
+     android:layout_alignParentBottom="true"
      android:layout_marginLeft="10dp"
      android:layout_marginRight="10dp">
 
@@ -85,7 +93,7 @@
   <TextView
       android:id="@+id/icerik"
       android:layout_width="match_parent"
-      android:layout_height="250dp"
+      android:layout_height="300dp"
       android:text="TextView"
       android:background="#F0E4CE"
       android:textSize="30px"
@@ -98,18 +106,6 @@
 
 
 
- <Button
-     android:id="@+id/button5"
-     android:backgroundTint="@color/colorPrimaryDark"
-     android:layout_width="50dp"
-     android:layout_height="50dp"
-     android:background="@drawable/speaker"
-     android:layout_alignBaseline="@+id/button3"
-     android:layout_alignBottom="@+id/button3"
-     android:layout_toRightOf="@+id/imageView2"
-     android:layout_toEndOf="@+id/imageView2"
-     android:layout_marginLeft="20dp"
-     android:layout_marginStart="20dp" />
 
 </RelativeLayout>
 

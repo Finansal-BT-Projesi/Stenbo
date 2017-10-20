@@ -1,5 +1,6 @@
 package com.finansal.bt.project;
 
+import android.app.ActionBar;
 import android.app.Dialog;
 import android.content.Context;
 import android.graphics.Typeface;
@@ -7,11 +8,14 @@ import android.os.AsyncTask;
 import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Spannable;
+import android.text.SpannableString;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toolbar;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -36,7 +40,7 @@ public class StoryActivity extends AppCompatActivity {
     EditText edt;
     Context context=this;
     String resultString;
-    Typeface tf1;
+    Typeface tf1,tf2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,10 +50,10 @@ public class StoryActivity extends AppCompatActivity {
         Bundle extras=getIntent().getExtras();
         String toolbarBaslik=extras.getString("baslik");
         icerik=(TextView)findViewById(R.id.icerik);
-
         tf1=Typeface.createFromAsset(getAssets(), "fonts/gfs.ttf");
-
         icerik.setTypeface(tf1);
+
+
 
         db=FirebaseDatabase.getInstance();
 
