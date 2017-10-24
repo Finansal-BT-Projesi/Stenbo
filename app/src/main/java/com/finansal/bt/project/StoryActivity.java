@@ -4,26 +4,37 @@ import android.app.ActionBar;
 import android.app.Dialog;
 import android.content.Context;
 import android.graphics.Typeface;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Spannable;
 import android.text.SpannableString;
+import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.Toolbar;
 
+import com.bumptech.glide.Glide;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -31,8 +42,11 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+
 public class StoryActivity extends AppCompatActivity {
 
+    private FirebaseAuth mAuth;
+    private FirebaseStorage fStorage;
     DatabaseReference oku;
     FirebaseDatabase db;
     TextView icerik;
@@ -41,22 +55,22 @@ public class StoryActivity extends AppCompatActivity {
     Context context=this;
     String resultString;
     Typeface tf1,tf2;
+    ImageView img;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_story);
 
         Bundle extras=getIntent().getExtras();
         String toolbarBaslik=extras.getString("baslik");
+        img=(ImageView)findViewById(R.id.imageView2);
+
         icerik=(TextView)findViewById(R.id.icerik);
         tf1=Typeface.createFromAsset(getAssets(), "fonts/gfs.ttf");
         icerik.setTypeface(tf1);
 
-
-
         db=FirebaseDatabase.getInstance();
-
 
         this.setTitle(toolbarBaslik);
 
@@ -82,7 +96,19 @@ public class StoryActivity extends AppCompatActivity {
             }
         });
 
+
+       FirebaseStorage storage=FirebaseStorage.getInstance();
+        StorageReference storageRef=storage.getReferenceFromUrl("gs://stenbo-78fc7.appspot.com/").child(toolbarBaslik+".jpg");
+        storageRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+            @Override
+            public void onSuccess(Uri uri) {
+               Glide.with(StoryActivity.this).load(uri.toString()).into(img);
+            }
+        });
+
     }
+
+
 
     @Override
     public void onBackPressed() {

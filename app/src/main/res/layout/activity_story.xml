@@ -96,7 +96,7 @@
       android:layout_height="300dp"
       android:text="TextView"
       android:background="#F0E4CE"
-      android:textSize="30px"
+      android:textSize="20dp"
 
       />
 
