@@ -57,6 +57,7 @@ public class StoryActivity extends AppCompatActivity {
     Typeface tf1,tf2;
     ImageView img;
 
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

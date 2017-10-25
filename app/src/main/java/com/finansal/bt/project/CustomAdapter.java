@@ -10,6 +10,8 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+
 import java.util.List;
 
 /**
@@ -23,10 +25,12 @@ public class CustomAdapter extends BaseAdapter{
 
     private LayoutInflater mInflater;
     private List<String> isimListesi;
+    private List<String>resimListesi;
 
-    public CustomAdapter(Activity activity, List<String> isimler) {
+    public CustomAdapter(Activity activity, List<String> isimler,List<String>resimler) {
         mInflater=(LayoutInflater)activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         isimListesi=isimler;
+        resimListesi=resimler;
     }
 
     @Override
@@ -55,7 +59,7 @@ public class CustomAdapter extends BaseAdapter{
         String isim=isimListesi.get(position);
         baslik.setText(isim);
 
-      //  Glide.with(mInflater.getContext()).load("https://indigodergisi.com/wp-content/uploads/2017/05/1494118823_EpilepsiveBen_6_11Ya_____kincisi__Berat___pek-265x198.jpg").into(resim);
+          Glide.with(mInflater.getContext()).load(resimListesi.get(position).toString()).into(resim);
 
         return satirView;
     }
