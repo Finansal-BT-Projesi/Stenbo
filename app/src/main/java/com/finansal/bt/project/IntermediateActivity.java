@@ -31,9 +31,14 @@ public class IntermediateActivity extends AppCompatActivity {
     private String img_url[]={
             "https://firebasestorage.googleapis.com/v0/b/stenbo-78fc7.appspot.com/o/A%20Secret%20Talent.jpg?alt=media&token=3397fb05-e3a0-4881-8689-db02d1f827d2",
             "https://firebasestorage.googleapis.com/v0/b/stenbo-78fc7.appspot.com/o/Act%20like%20the%20Others.jpg?alt=media&token=00df8e77-522c-4d31-bdd0-0ff04afb91d6",
+            "https://firebasestorage.googleapis.com/v0/b/stenbo-78fc7.appspot.com/o/Clockwork.jpg?alt=media&token=2ac69c8c-6e00-4dc5-a130-2e9d4443ff3a",
+            "https://firebasestorage.googleapis.com/v0/b/stenbo-78fc7.appspot.com/o/Decision.jpg?alt=media&token=785486a4-f376-488d-948c-c40bddddd0c7",
             "https://firebasestorage.googleapis.com/v0/b/stenbo-78fc7.appspot.com/o/Lost%20and%20Found.jpg?alt=media&token=fa945d48-2090-499b-b945-2b28957da634",
             "https://firebasestorage.googleapis.com/v0/b/stenbo-78fc7.appspot.com/o/Love%20is%20in%20the%20Air.jpg?alt=media&token=0c617dae-fa53-4934-bd3e-7fdc9af9d928",
-            "https://firebasestorage.googleapis.com/v0/b/stenbo-78fc7.appspot.com/o/The%20Best%20Practice%20Ever.jpg?alt=media&token=3ca5d908-c14a-4895-857c-2444e089ab85"
+            "https://firebasestorage.googleapis.com/v0/b/stenbo-78fc7.appspot.com/o/Red%20Balloons.jpg?alt=media&token=64046ac3-52c4-4c96-8d25-e66435c6e8f3",
+            "https://firebasestorage.googleapis.com/v0/b/stenbo-78fc7.appspot.com/o/The%20Best%20Practice%20Ever.jpg?alt=media&token=3ca5d908-c14a-4895-857c-2444e089ab85",
+            "https://firebasestorage.googleapis.com/v0/b/stenbo-78fc7.appspot.com/o/The%20Champion%20Duck.jpg?alt=media&token=9483dc2a-7c63-4386-bbc6-b4539202e6c9",
+            "https://firebasestorage.googleapis.com/v0/b/stenbo-78fc7.appspot.com/o/The%20Wrong%20House.jpg?alt=media&token=764a71ca-799e-4c4d-b32b-215e76b4a035",
     };
 
     @Override
