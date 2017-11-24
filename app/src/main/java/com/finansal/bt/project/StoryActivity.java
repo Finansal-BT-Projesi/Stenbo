@@ -53,7 +53,7 @@ public class StoryActivity extends AppCompatActivity {
     String languagePair = "en-tr";
     EditText edt;
     Context context=this;
-    String resultString;
+    String resultString,sozcuk;
     Typeface tf1,tf2;
     ImageView img;
 
@@ -118,6 +118,7 @@ public class StoryActivity extends AppCompatActivity {
     }
     public void searchOnclick(View v){
         edt=(EditText)findViewById(R.id.editText);
+        sozcuk=edt.getText().toString().trim();
         Translate(edt.getText().toString().trim(),languagePair);
     }
     void Translate(String textToBeTranslated,String languagePair){
@@ -178,10 +179,14 @@ public class StoryActivity extends AppCompatActivity {
 
             // set the custom dialog components - text, image and button
             TextView text = (TextView) dialog.findViewById(R.id.word);
-            text.setText(edt.getText().toString()+" :");
             TextView text1 = (TextView) dialog.findViewById(R.id.main);
-            text1.setText(resultString);
-
+            if(resultString.equals(sozcuk)){
+                text1.setText("Yanlış bir kelime girdiniz. Tekrar deneyiniz.");
+            }
+            else{
+                text.setText(edt.getText().toString()+" :");
+                text1.setText(resultString);
+            }
             Button dialogButton = (Button) dialog.findViewById(R.id.okey);
             // if button is clicked, close the custom dialog
             dialogButton.setOnClickListener(new View.OnClickListener() {
