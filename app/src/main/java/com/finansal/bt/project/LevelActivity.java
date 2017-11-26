@@ -24,4 +24,8 @@ public class LevelActivity extends AppCompatActivity {
         Intent ıntent=new Intent(this,IntermediateActivity.class);
         this.startActivity(ıntent);
     }
+    public void Kelimelerim(View v){
+        Intent ıntent=new Intent(this,FavoriteWords.class);
+        this.startActivity(ıntent);
+    }
 }

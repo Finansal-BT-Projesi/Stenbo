@@ -19,7 +19,8 @@
         <activity android:name=".StoryActivity" />
         <activity android:name=".BeginnerActivity" />
         <activity android:name=".ElementaryActivity" />
-        <activity android:name=".IntermediateActivity"></activity>
+        <activity android:name=".IntermediateActivity" />
+        <activity android:name=".FavoriteWords"></activity>
     </application>
 
 </manifest>

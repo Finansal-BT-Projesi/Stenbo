@@ -188,10 +188,19 @@ public class StoryActivity extends AppCompatActivity {
                 text1.setText(resultString);
             }
             Button dialogButton = (Button) dialog.findViewById(R.id.okey);
+            Button dialogButton1=(Button)dialog.findViewById(R.id.fav);
             // if button is clicked, close the custom dialog
             dialogButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    dialog.dismiss();
+                }
+            });
+            dialogButton1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Database db = new Database(StoryActivity.this);
+                    db.VeriEkle(sozcuk, resultString);
                     dialog.dismiss();
                 }
             });

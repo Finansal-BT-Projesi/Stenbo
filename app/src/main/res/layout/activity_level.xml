@@ -49,6 +49,12 @@
             android:layout_marginBottom="30dp"
             android:background="@drawable/btnintermediate"></Button>
 
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Kelimelerim"
+            android:onClick="Kelimelerim"/>
+
 
     </LinearLayout>
 
