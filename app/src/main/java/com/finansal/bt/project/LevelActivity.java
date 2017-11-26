@@ -12,6 +12,8 @@ import android.widget.TextView;
 
 public class LevelActivity extends AppCompatActivity {
 
+
+
     Button btnBeginner;
     Button btnElementary;
     Button btnIntermediate;
@@ -20,6 +22,9 @@ public class LevelActivity extends AppCompatActivity {
     Animation uptodown,downtoup;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_level);
 

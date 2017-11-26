@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.view.animation.Animation;
@@ -23,6 +24,9 @@ public class StartActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+
+
 //Başlık çubuğunu gizleme
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 
@@ -42,6 +46,9 @@ public class StartActivity extends AppCompatActivity {
         motto.setAnimation(downtoup);
 
 
+
+
+
         Handler h = new Handler();
         h.postDelayed(new Runnable() {
             @Override
@@ -53,6 +60,11 @@ public class StartActivity extends AppCompatActivity {
             }
         },2000);
 
+    }
+
+    public void levelactivity_gec(View v){
+        Intent ıntent=new Intent(this,LevelActivity.class);
+        this.startActivity(ıntent);
     }
 
 

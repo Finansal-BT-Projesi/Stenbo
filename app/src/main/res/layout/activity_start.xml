@@ -11,7 +11,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical"
     android:background="#F0E4CE"
-
+android:onClick="levelactivity_gec"
     tools:context="com.finansal.bt.project.StartActivity"
     android:weightSum="1">
 
