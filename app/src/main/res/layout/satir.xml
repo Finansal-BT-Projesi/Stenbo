@@ -27,7 +27,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
                 android:layout_marginRight="16dp"
-                android:src="@drawable/logokit"
+                android:src="@drawable/logobaykus"
 
                 />
 

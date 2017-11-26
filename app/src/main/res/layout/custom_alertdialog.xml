@@ -8,20 +8,22 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginTop="26dp"
-        android:layout_marginLeft="57dp"
-        android:layout_marginStart="57dp">
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp">
 
         <TextView
             android:id="@+id/word"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="20dp"
          />
 
         <TextView
             android:id="@+id/main"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="20dp"
             android:layout_toRightOf="@+id/word" />
 
 
@@ -31,22 +33,33 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
+
     android:layout_marginTop="15dp">
 
     <Button
         android:id="@+id/okey"
         android:text="OK"
+        android:textSize="15dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="18dp"
-        android:layout_marginStart="18dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="10dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:background="@drawable/ripple"
          />
 
     <Button
         android:id="@+id/fav"
-        android:text="Add Your Favorite"
-        android:layout_width="wrap_content"
+        android:layout_width="157dp"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/ripple"
+        android:backgroundTint="@color/colorPrimary"
+        android:text="Add Your Favorite"
+        android:textSize="15dp"
 
 
         />

@@ -7,56 +7,94 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    android:background="@drawable/arkaplan"
+    android:background="@drawable/arkaplann"
     tools:context="com.finansal.bt.project.LevelActivity">
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
+        android:layout_gravity="center"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
         android:orientation="vertical"
         android:weightSum="1">
 
         <Button
             android:id="@+id/btnBeginner"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_marginBottom="30dp"
-            android:layout_marginTop="60dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:layout_marginTop="50dp"
 
-            android:background="@drawable/btnbeginner"
-            android:onClick="Beginner">
+            android:background="@drawable/ripple"
+            android:backgroundTint="@color/colorPrimaryDark"
+            android:onClick="Beginner"
+            android:text="BEGINNER"
+            android:textColor="#ffffff"
+            android:textSize="25dp">
 
         </Button>
+
 
         <Button
             android:id="@+id/btnElementary"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_marginBottom="30dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
 
-            android:background="@drawable/btnelementery"
-            android:onClick="Elementary"></Button>
+
+
+            android:background="@drawable/ripple"
+            android:backgroundTint="@color/colorPrimaryDark"
+
+            android:onClick="Elementary"
+            android:text="ELEMENTARY"
+            android:textColor="#ffffff"
+            android:textSize="25dp"
+
+            ></Button>
 
         <Button
             android:id="@+id/btnAdvanced"
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/ripple"
+            android:backgroundTint="@color/colorPrimaryDark"
+            android:gravity="center"
             android:onClick="Intermediate1"
-            android:layout_height="100dp"
-            android:layout_marginBottom="30dp"
-            android:background="@drawable/btnintermediate"></Button>
+            android:text="INTERMEDIATE"
+            android:textColor="#ffffff"
+            android:textSize="25dp"></Button>
+
 
         <Button
+            android:id="@+id/btnKelimelerim"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+
+            android:background="@drawable/ripple"
+
+            android:backgroundTint="@color/colorPrimaryDark"
+
+
+            android:onClick="Kelimelerim"
             android:text="Kelimelerim"
-            android:onClick="Kelimelerim"/>
+            android:textColor="#ffffff"
+            android:textSize="25dp"
+
+
+
+
+            />
+
 
 
     </LinearLayout>
+
+
 
 
 </LinearLayout>
