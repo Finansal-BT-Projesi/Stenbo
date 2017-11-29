@@ -65,4 +65,14 @@ public class Database extends SQLiteOpenHelper {
         db.close();
         return veriler;
     }
+    public void VeriSil(int id){
+        SQLiteDatabase db = this.getWritableDatabase();
+        try {
+            // id ye göre verimizi siliyoruz
+            String where = ROW_ID + " = " + id ;
+            db.delete(TABLO,where,null);
+        }catch (Exception e){
+        }
+        db.close();
+    }
 }
