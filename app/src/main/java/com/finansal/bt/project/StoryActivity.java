@@ -3,6 +3,7 @@ package com.finansal.bt.project;
 import android.app.ActionBar;
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
@@ -16,6 +17,8 @@ import android.text.Spannable;
 import android.text.SpannableString;
 import android.util.AttributeSet;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -51,6 +54,7 @@ import java.util.concurrent.TimeUnit;
 
 public class StoryActivity extends AppCompatActivity {
 
+    private Menu menu;
     private FirebaseAuth mAuth;
     private FirebaseStorage fStorage;
     DatabaseReference oku;
@@ -134,6 +138,27 @@ public class StoryActivity extends AppCompatActivity {
         seekbar.setClickable(false);
 
     }
+
+    //paylaşma iconu toolbara eklenme kısmı başlangıç/////////////
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        getMenuInflater().inflate(R.menu.activity_main_actions, menu);
+        this.menu=menu;
+        return true;
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_sharing:
+                Intent myIntent = new Intent(StoryActivity.this,FavoriteWords.class);
+                startActivity(myIntent);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+    /////paylaşma iconu toolbara eklenme kısmı son///////////////
+
     public void onClickplay(View view){
         if(start==0){
             try {
