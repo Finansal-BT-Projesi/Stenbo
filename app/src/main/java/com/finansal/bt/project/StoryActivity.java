@@ -73,7 +73,7 @@ public class StoryActivity extends AppCompatActivity {
     private int forwardTime = 5000;
     private int backwardTime = 5000;
     private SeekBar seekbar;
-    private Button play;
+    private Button play,twitter,whatsapp;
     String myUri;
     int start=0,lenght=0;
     public static int oneTimeOnly = 0;
@@ -150,8 +150,36 @@ public class StoryActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_sharing:
-                Intent myIntent = new Intent(StoryActivity.this,FavoriteWords.class);
-                startActivity(myIntent);
+                final Dialog dialog = new Dialog(context);
+                dialog.setContentView(R.layout.custom_sharedialog);
+                twitter=(Button)dialog.findViewById(R.id.twitter);
+                whatsapp=(Button)dialog.findViewById(R.id.whatsapp);
+                twitter.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent();
+                        intent.setAction(Intent.ACTION_SEND);
+                        intent.putExtra(Intent.EXTRA_TEXT, icerik.getText().toString());
+                        intent.setType("text/plain");
+                        intent.setPackage("com.twitter.android");
+                        startActivity(intent);
+                        dialog.dismiss();
+
+                    }
+                });
+                whatsapp.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent();
+                        intent.setAction(Intent.ACTION_SEND);
+                        intent.putExtra(Intent.EXTRA_TEXT, icerik.getText().toString());
+                        intent.setType("text/plain");
+                        intent.setPackage("com.whatsapp");
+                        startActivity(intent);
+                        dialog.dismiss();
+                    }
+                });
+                dialog.show();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
