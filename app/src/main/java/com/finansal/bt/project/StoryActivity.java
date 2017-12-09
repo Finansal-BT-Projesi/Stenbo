@@ -4,8 +4,11 @@ import android.app.ActionBar;
 import android.app.Dialog;
 import android.content.Context;
 import android.graphics.Typeface;
+import android.media.AudioManager;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.os.Handler;
 import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -16,7 +19,9 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.Toolbar;
@@ -41,6 +46,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.concurrent.TimeUnit;
 
 
 public class StoryActivity extends AppCompatActivity {
@@ -56,6 +62,17 @@ public class StoryActivity extends AppCompatActivity {
     String resultString,sozcuk;
     Typeface tf1,tf2;
     ImageView img;
+    private MediaPlayer mediaPlayer;
+    private double startTime = 0;
+    private double finalTime = 0;
+    private Handler myHandler = new Handler();;
+    private int forwardTime = 5000;
+    private int backwardTime = 5000;
+    private SeekBar seekbar;
+    private Button play;
+    String myUri;
+    int start=0,lenght=0;
+    public static int oneTimeOnly = 0;
 
 
     @Override
@@ -66,6 +83,7 @@ public class StoryActivity extends AppCompatActivity {
         Bundle extras=getIntent().getExtras();
         String toolbarBaslik=extras.getString("baslik");
         img=(ImageView)findViewById(R.id.imageView2);
+        seekbar = (SeekBar)findViewById(R.id.seekBar1);
 
         icerik=(TextView)findViewById(R.id.icerik);
         tf1=Typeface.createFromAsset(getAssets(), "fonts/gfs.ttf");
@@ -106,6 +124,88 @@ public class StoryActivity extends AppCompatActivity {
                Glide.with(StoryActivity.this).load(uri.toString()).into(img);
             }
         });
+        StorageReference storageRef1=storage.getReferenceFromUrl("gs://stenbo-78fc7.appspot.com/"+toolbarBaslik+".mp3");
+        storageRef1.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+            @Override
+            public void onSuccess(Uri uri) {
+                myUri=uri.toString();
+            }
+        });
+        seekbar.setClickable(false);
+
+    }
+    public void onClickplay(View view){
+        if(start==0){
+            try {
+                mediaPlayer=new MediaPlayer();
+                mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
+                mediaPlayer.setDataSource(myUri);
+                mediaPlayer.prepare();
+                mediaPlayer.start();
+                start=1;
+            } catch (Exception e) {
+                Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        }
+        else if(start==1){
+            mediaPlayer.pause();
+            lenght=mediaPlayer.getCurrentPosition();
+            start=2;
+        }
+        else if(start==2){
+            lenght=mediaPlayer.getCurrentPosition();
+            mediaPlayer.seekTo(lenght);
+            mediaPlayer.start();
+            start=1;
+        }
+        finalTime = mediaPlayer.getDuration();
+        if(lenght==finalTime){
+            start=1;
+            mediaPlayer.start();
+        }
+        startTime = mediaPlayer.getCurrentPosition();
+        if(oneTimeOnly == 0){
+            seekbar.setMax((int) finalTime);
+            oneTimeOnly = 1;
+        }
+        seekbar.setProgress((int)startTime);
+        myHandler.postDelayed(UpdateSongTime,100);
+    }
+    private Runnable UpdateSongTime = new Runnable() {
+        public void run() {
+            startTime = mediaPlayer.getCurrentPosition();
+            //Muziğin hangi sürede oldugunu gostermek icin, seekbar kullarak gosteriyoruz...
+            seekbar.setProgress((int)startTime);
+            myHandler.postDelayed(this, 100);
+        }
+    };
+    public void onClickforward(View view){
+        int temp = (int)startTime;
+        if((temp+forwardTime)<=finalTime){
+            startTime = startTime + forwardTime;
+            mediaPlayer.seekTo((int) startTime);
+        }
+        else{
+
+            //Muzigin çalıs suresi son 5 saniye geldiginde ,ileri tusuna basarsanız kosulu icin uyarı yazdıyoruz
+
+            Toast.makeText(getApplicationContext(), "Son 5 saniyedeyken muziği ilerletemezsiz",
+                    Toast.LENGTH_SHORT).show();
+        }
+
+    }
+    //Geri butonuna bastgınızda,muzigin çalış süresini 5 saniye azaltarak muzigi  geriye alır
+    public void onClickrewind(View view){
+        int temp = (int)startTime;
+        if((temp-backwardTime)>0){
+            startTime = startTime - backwardTime;
+            mediaPlayer.seekTo((int) startTime);
+        }
+        else{
+            //Muzigin çalıs suresi ilk 5 saniye gelmeden ,geri tusuna basarsanız kosulu icin uyarı yazdıyoruz
+            Toast.makeText(getApplicationContext(),"İlk 5 saniyedeyken muziği geri alamazsınız",
+                    Toast.LENGTH_SHORT).show();
+        }
 
     }
 

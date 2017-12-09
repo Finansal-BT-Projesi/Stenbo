@@ -58,51 +58,75 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
-    <Button
-        android:id="@+id/button3"
-        android:backgroundTint="@color/colorPrimaryDark"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:background="@drawable/play"
-        android:layout_toRightOf="@+id/button5"/>
-
-
- <Button
-     android:id="@+id/button5"
-     android:backgroundTint="@color/colorPrimaryDark"
-     android:layout_width="30dp"
-     android:layout_height="30dp"
-     android:background="@drawable/speaker"
-     android:layout_marginLeft="20dp"
-     android:layout_marginStart="20dp" />
 
  <ScrollView
      android:id="@+id/layoutMenu"
      android:layout_width="match_parent"
-     android:layout_height="wrap_content"
-     android:layout_marginTop="8dp"
-     android:layout_below="@+id/button2"
+     android:layout_height="250dp"
+     android:layout_alignEnd="@+id/editText"
      android:layout_alignParentLeft="true"
      android:layout_alignParentStart="true"
-     android:layout_alignParentBottom="true"
+     android:layout_alignRight="@+id/editText"
+     android:layout_below="@+id/button2"
      android:layout_marginLeft="10dp"
-     android:layout_marginRight="10dp">
-
+     android:layout_marginTop="8dp">
 
 
   <TextView
       android:id="@+id/icerik"
       android:layout_width="match_parent"
       android:layout_height="300dp"
-      android:text="TextView"
       android:background="#F0E4CE"
+      android:text="TextView"
       android:textSize="20dp"
 
       />
 
 
-
  </ScrollView>
+
+ <ImageButton
+     android:id="@+id/forward"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:layout_alignParentBottom="true"
+     android:layout_alignParentLeft="true"
+     android:layout_marginBottom="20dp"
+     android:layout_marginLeft="215dp"
+     android:onClick="onClickforward"
+     android:backgroundTint="@color/colorPrimaryDark"
+     android:background="@android:drawable/ic_media_ff" />
+
+ <ImageButton
+     android:id="@+id/rewind"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:layout_alignParentRight="true"
+     android:layout_marginTop="460dp"
+     android:layout_marginRight="230dp"
+     android:onClick="onClickrewind"
+     android:background="@android:drawable/ic_media_rew"
+     android:backgroundTint="@color/colorPrimaryDark"/>
+
+ <Button
+     android:id="@+id/button3"
+     android:layout_width="30dp"
+     android:layout_height="30dp"
+     android:layout_marginTop="460dp"
+     android:layout_marginLeft="170dp"
+     android:background="@drawable/play"
+     android:onClick="onClickplay"
+     android:backgroundTint="@color/colorPrimaryDark" />
+
+
+ <SeekBar
+     android:id="@+id/seekBar1"
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:layout_marginTop="440dp"
+     android:layout_marginLeft="30dp"
+     android:layout_marginRight="30dp"/>
+
 
 
 
