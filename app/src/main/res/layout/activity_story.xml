@@ -85,50 +85,54 @@
 
  </ScrollView>
 
- <ImageButton
-     android:id="@+id/forward"
+
+ <RelativeLayout
+     android:id="@+id/InnerRelativeLayout"
      android:layout_width="wrap_content"
      android:layout_height="wrap_content"
-     android:layout_alignParentBottom="true"
-     android:layout_alignParentLeft="true"
-     android:layout_marginBottom="20dp"
-     android:layout_marginLeft="215dp"
-     android:onClick="onClickforward"
-     android:backgroundTint="@color/colorPrimaryDark"
-     android:background="@android:drawable/ic_media_ff" />
-
- <ImageButton
-     android:id="@+id/rewind"
-     android:layout_width="wrap_content"
-     android:layout_height="wrap_content"
-     android:layout_alignParentRight="true"
-     android:layout_marginTop="460dp"
-     android:layout_marginRight="230dp"
-     android:onClick="onClickrewind"
-     android:background="@android:drawable/ic_media_rew"
-     android:backgroundTint="@color/colorPrimaryDark"/>
-
- <Button
-     android:id="@+id/button3"
-     android:layout_width="30dp"
-     android:layout_height="30dp"
-     android:layout_marginTop="460dp"
-     android:layout_marginLeft="170dp"
-     android:background="@drawable/play"
-     android:onClick="onClickplay"
-     android:backgroundTint="@color/colorPrimaryDark" />
+     android:layout_alignParentBottom="true">
 
 
- <SeekBar
-     android:id="@+id/seekBar1"
-     android:layout_width="match_parent"
-     android:layout_height="wrap_content"
-     android:layout_marginTop="440dp"
-     android:layout_marginLeft="30dp"
-     android:layout_marginRight="30dp"/>
+  <ImageButton
+      android:id="@+id/forward"
+      android:layout_width="45dp"
+      android:layout_height="45dp"
+      android:layout_toRightOf="@id/button3"
+      android:background="@android:drawable/ic_media_ff"
+      android:backgroundTint="@color/colorPrimaryDark"
+      android:onClick="onClickforward"
+      android:layout_below="@id/seekBar1"/>
+
+  <ImageButton
+      android:id="@+id/rewind"
+      android:layout_width="45dp"
+      android:layout_height="45dp"
+      android:layout_toLeftOf="@id/button3"
+      android:background="@android:drawable/ic_media_rew"
+      android:backgroundTint="@color/colorPrimaryDark"
+      android:onClick="onClickrewind"
+      android:layout_below="@id/seekBar1"/>
+
+  <Button
+      android:id="@+id/button3"
+      android:layout_width="45dp"
+      android:layout_height="45dp"
+android:layout_centerHorizontal="true"
+      android:background="@drawable/play"
+      android:backgroundTint="@color/colorPrimaryDark"
+      android:onClick="onClickplay"
+      android:layout_below="@id/seekBar1"/>
 
 
+  <SeekBar
+      android:id="@+id/seekBar1"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
 
+
+      />
+
+ </RelativeLayout>
 
 
 </RelativeLayout>
