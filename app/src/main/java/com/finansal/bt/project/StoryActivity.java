@@ -138,6 +138,17 @@ public class StoryActivity extends AppCompatActivity {
         seekbar.setClickable(false);
 
     }
+    @Override
+    public void onPause(){
+        super.onPause();
+        mediaPlayer.pause();
+    }
+
+    @Override
+    public void onStop(){
+        super.onStop();
+        mediaPlayer.pause();
+    }
 
     //paylaşma iconu toolbara eklenme kısmı başlangıç/////////////
     @Override
