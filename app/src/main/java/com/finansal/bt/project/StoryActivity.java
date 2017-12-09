@@ -272,7 +272,12 @@ public class StoryActivity extends AppCompatActivity {
     public void searchOnclick(View v){
         edt=(EditText)findViewById(R.id.editText);
         sozcuk=edt.getText().toString().trim();
-        Translate(edt.getText().toString().trim(),languagePair);
+        if(sozcuk.equals("")){
+            Toast.makeText(this,"Herhangi bir kelime girmedin",Toast.LENGTH_LONG).show();
+        }
+        else{
+            Translate(edt.getText().toString().trim(),languagePair);
+        }
     }
     void Translate(String textToBeTranslated,String languagePair){
         new TranslatorBackgroundTask(context).execute(textToBeTranslated,languagePair);
