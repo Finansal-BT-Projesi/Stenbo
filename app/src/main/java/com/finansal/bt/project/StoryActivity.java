@@ -27,6 +27,7 @@ import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.ToggleButton;
 import android.widget.Toolbar;
 
 import com.bumptech.glide.Glide;
@@ -78,11 +79,62 @@ public class StoryActivity extends AppCompatActivity {
     int start=0,lenght=0;
     public static int oneTimeOnly = 0;
 
+    ToggleButton toggleBtn;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_story);
+        mediaPlayer=new MediaPlayer();
+
+
+        toggleBtn = (ToggleButton) findViewById(R.id.button3);
+
+        toggleBtn.setChecked(true);
+
+
+        toggleBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                boolean on = ((ToggleButton) v).isChecked();
+                if (on) {
+                    // ON durumunda yapılacaklar
+                    toggleBtn.setBackgroundResource(R.drawable.play);
+                        mediaPlayer.pause();
+                        lenght=mediaPlayer.getCurrentPosition();
+                }
+                else {
+                    // OFF durumunda yapılacaklar
+                    toggleBtn.setBackgroundResource(R.drawable.stop);
+                    if(start==0){
+                        try {
+                            mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
+                            mediaPlayer.setDataSource(myUri);
+                            mediaPlayer.prepare();
+                            mediaPlayer.start();
+                            start=1;
+                        } catch (Exception e) {
+                            Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                    finalTime = mediaPlayer.getDuration();
+                    if(start==1 && lenght!=finalTime){
+                        mediaPlayer.seekTo(lenght);
+                        mediaPlayer.start();
+                    }
+                    if(lenght==finalTime){
+                        mediaPlayer.start();
+                    }
+                    startTime = mediaPlayer.getCurrentPosition();
+                    if(oneTimeOnly == 0){
+                        seekbar.setMax((int) finalTime);
+                        oneTimeOnly = 1;
+                    }
+                    seekbar.setProgress((int)startTime);
+                    myHandler.postDelayed(UpdateSongTime,100);
+                }
+            }
+        });
 
         Bundle extras=getIntent().getExtras();
         String toolbarBaslik=extras.getString("baslik");
@@ -138,7 +190,7 @@ public class StoryActivity extends AppCompatActivity {
         seekbar.setClickable(false);
 
     }
-    @Override
+   /* @Override
     public void onPause(){
         super.onPause();
         mediaPlayer.pause();
@@ -148,7 +200,7 @@ public class StoryActivity extends AppCompatActivity {
     public void onStop(){
         super.onStop();
         mediaPlayer.pause();
-    }
+    }*/
 
     //paylaşma iconu toolbara eklenme kısmı başlangıç/////////////
     @Override
@@ -196,45 +248,8 @@ public class StoryActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
-    /////paylaşma iconu toolbara eklenme kısmı son///////////////
+    /////paylaşma iconu toolbara eklenme kısmı son//////////////
 
-    public void onClickplay(View view){
-        if(start==0){
-            try {
-                mediaPlayer=new MediaPlayer();
-                mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
-                mediaPlayer.setDataSource(myUri);
-                mediaPlayer.prepare();
-                mediaPlayer.start();
-                start=1;
-            } catch (Exception e) {
-                Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
-            }
-        }
-        else if(start==1){
-            mediaPlayer.pause();
-            lenght=mediaPlayer.getCurrentPosition();
-            start=2;
-        }
-        else if(start==2){
-            lenght=mediaPlayer.getCurrentPosition();
-            mediaPlayer.seekTo(lenght);
-            mediaPlayer.start();
-            start=1;
-        }
-        finalTime = mediaPlayer.getDuration();
-        if(lenght==finalTime){
-            start=1;
-            mediaPlayer.start();
-        }
-        startTime = mediaPlayer.getCurrentPosition();
-        if(oneTimeOnly == 0){
-            seekbar.setMax((int) finalTime);
-            oneTimeOnly = 1;
-        }
-        seekbar.setProgress((int)startTime);
-        myHandler.postDelayed(UpdateSongTime,100);
-    }
     private Runnable UpdateSongTime = new Runnable() {
         public void run() {
             startTime = mediaPlayer.getCurrentPosition();
