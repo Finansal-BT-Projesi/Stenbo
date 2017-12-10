@@ -27,7 +27,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".LevelActivity" />
-        <activity android:name=".StoryActivity" />
+        <activity android:name=".StoryActivity"
+            android:windowSoftInputMode="stateHidden" />
         <activity android:name=".BeginnerActivity" />
         <activity android:name=".ElementaryActivity" />
         <activity android:name=".IntermediateActivity" />
