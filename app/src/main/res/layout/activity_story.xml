@@ -33,49 +33,59 @@
       android:onClick="searchOnclick"
       android:layout_marginTop="10dp" />
 
-  <EditText
-      android:id="@+id/editText"
-      android:layout_width="match_parent"
-      android:layout_height="30dp"
-      android:ems="10"
-      android:layout_marginLeft="10dp"
-      android:layout_marginRight="10dp"
-      android:inputType="textPersonName"
-      android:background="@color/colorPrimary"
-      tools:layout_editor_absoluteX="119dp"
-      tools:layout_editor_absoluteY="122dp"
-      android:layout_alignTop="@+id/button2"
-      android:layout_toEndOf="@+id/button2"
-      android:layout_toRightOf="@+id/button2" />
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_alignTop="@+id/button2"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_toEndOf="@+id/button2"
+        android:layout_toRightOf="@+id/button2"
+        android:background="@color/colorPrimary"
+        android:ems="10"
+        android:inputType="textPersonName"
+        tools:layout_editor_absoluteX="119dp"
+        tools:layout_editor_absoluteY="122dp" />
 
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/button2"
+        android:layout_above="@id/InnerRelativeLayout">
 
-  <ScrollView
-      android:id="@+id/layoutMenu"
-      android:layout_width="match_parent"
-      android:layout_height="230dp"
-      android:layout_alignEnd="@+id/editText"
-      android:layout_alignParentLeft="true"
-      android:layout_alignParentStart="true"
-      android:layout_alignRight="@+id/editText"
-      android:layout_below="@+id/button2"
-      android:layout_marginLeft="10dp"
+        <ScrollView
+            android:id="@+id/layoutMenu"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignEnd="@+id/editText"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignRight="@+id/editText"
+            android:layout_below="@+id/button2"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
 
-      android:layout_marginTop="8dp">
-
-
-   <TextView
-       android:id="@+id/icerik"
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       android:background="#F0E4CE"
-       android:text="TextView"
-       android:textSize="20dp"
-
-       />
+            android:layout_marginTop="8dp">
 
 
-  </ScrollView>
+            <TextView
+                android:id="@+id/icerik"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#F0E4CE"
+                android:text="TextView"
+                android:textSize="20dp"
+
+                />
+
+
+        </ScrollView>
+
+    </LinearLayout>
 
 
 
@@ -83,7 +93,6 @@
      android:id="@+id/InnerRelativeLayout"
      android:layout_width="wrap_content"
      android:layout_height="wrap_content"
-    android:layout_alignBottom="@id/layoutMenu"
      android:layout_alignParentBottom="true">
 
 
