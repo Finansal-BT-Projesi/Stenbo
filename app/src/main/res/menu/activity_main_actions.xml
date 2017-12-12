@@ -7,7 +7,7 @@
         android:id="@+id/action_sharing"
         android:title="paylasma"
         app:showAsAction="always"
-<<<<<<< HEAD
+
         android:icon="@drawable/paylasmaicon">
 
         <menu>
@@ -18,9 +18,5 @@
         </menu>
 
      </item>
-=======
-        android:icon="@drawable/paylasmaicon"/>
 
-
->>>>>>> origin/master
 </menu>
