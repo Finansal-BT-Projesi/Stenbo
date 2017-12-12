@@ -55,7 +55,7 @@ public class ElementaryActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_elementary);
-        this.setTitle("Elementary");
+        this.setTitle("Intermediate");
 
         for(int i=0;i<image_url.length;i++){
             resimler.add(image_url[i].toString());

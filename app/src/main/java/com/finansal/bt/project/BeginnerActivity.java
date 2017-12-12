@@ -75,7 +75,7 @@ public class BeginnerActivity extends AppCompatActivity {
         for(int i=0;i<img_url.length;i++){
             resimler.add(img_url[i].toString());
         }
-        this.setTitle("Beginner");
+        this.setTitle("Elementary");
         beginner=true;
         ElementaryActivity.elementary=false;
         IntermediateActivity.intermediate=false;
