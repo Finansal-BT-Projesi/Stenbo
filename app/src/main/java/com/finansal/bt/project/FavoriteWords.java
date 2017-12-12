@@ -39,9 +39,9 @@ public class FavoriteWords extends AppCompatActivity {
                 final int sayac=position+1;
                 Database vt = new Database(FavoriteWords.this);
                 AlertDialog.Builder builder=new AlertDialog.Builder(FavoriteWords.this);
-                builder.setTitle("Uyarı");
-                builder.setMessage("Bu sözcüğü silmek istediğinizden emin misiniz?");
-                builder.setPositiveButton("Evet", new DialogInterface.OnClickListener() {
+                builder.setTitle("Alert");
+                builder.setMessage("Are you sure  you want to delete the word ?");
+                builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         Database vt = new Database(FavoriteWords.this);
@@ -49,7 +49,7 @@ public class FavoriteWords extends AppCompatActivity {
                         Listele();
                     }
                 });
-                builder.setNegativeButton("Hayır", new DialogInterface.OnClickListener() {
+                builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
 

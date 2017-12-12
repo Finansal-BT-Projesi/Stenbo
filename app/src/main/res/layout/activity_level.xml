@@ -65,7 +65,7 @@
             android:backgroundTint="@color/colorPrimaryDark"
             android:gravity="center"
             android:onClick="Intermediate1"
-            android:text="ADVENCED"
+            android:text="ADVANCED"
             android:textColor="#ffffff"
             android:textSize="25dp"></Button>
 
