@@ -30,7 +30,7 @@
             android:background="@drawable/ripple"
             android:backgroundTint="@color/colorPrimaryDark"
             android:onClick="Beginner"
-            android:text="BEGINNER"
+            android:text="ELEMENTARY"
             android:textColor="#ffffff"
             android:textSize="25dp">
 
@@ -49,7 +49,7 @@
             android:backgroundTint="@color/colorPrimaryDark"
 
             android:onClick="Elementary"
-            android:text="ELEMENTARY"
+            android:text="INTERMEDIATE"
             android:textColor="#ffffff"
             android:textSize="25dp"
 
@@ -65,7 +65,7 @@
             android:backgroundTint="@color/colorPrimaryDark"
             android:gravity="center"
             android:onClick="Intermediate1"
-            android:text="INTERMEDIATE"
+            android:text="ADVENCED"
             android:textColor="#ffffff"
             android:textSize="25dp"></Button>
 
@@ -81,7 +81,7 @@
 
 
             android:onClick="Kelimelerim"
-            android:text="Kelimelerim"
+            android:text="MY WORDS"
             android:textColor="#ffffff"
             android:textSize="25dp"
 

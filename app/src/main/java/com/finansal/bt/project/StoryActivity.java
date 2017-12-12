@@ -243,7 +243,7 @@ public class StoryActivity extends AppCompatActivity {
 
             //Muzigin çalıs suresi son 5 saniye geldiginde ,ileri tusuna basarsanız kosulu icin uyarı yazdıyoruz
 
-            Toast.makeText(getApplicationContext(), "Son 5 saniyedeyken muziği ilerletemezsiz",
+            Toast.makeText(getApplicationContext(), "You can not run it forward in the last 5 seconds ",
                     Toast.LENGTH_SHORT).show();
         }
 
@@ -257,7 +257,7 @@ public class StoryActivity extends AppCompatActivity {
         }
         else{
             //Muzigin çalıs suresi ilk 5 saniye gelmeden ,geri tusuna basarsanız kosulu icin uyarı yazdıyoruz
-            Toast.makeText(getApplicationContext(),"İlk 5 saniyedeyken muziği geri alamazsınız",
+            Toast.makeText(getApplicationContext(),"You can not rewind the sound in the first 5 seconds",
                     Toast.LENGTH_SHORT).show();
         }
 
@@ -274,7 +274,7 @@ public class StoryActivity extends AppCompatActivity {
         edt=(EditText)findViewById(R.id.editText);
         sozcuk=edt.getText().toString().trim();
         if(sozcuk.equals("")){
-            Toast.makeText(this,"Herhangi bir kelime girmedin",Toast.LENGTH_LONG).show();
+            Toast.makeText(this,"You have not written any words",Toast.LENGTH_LONG).show();
         }
         else{
             Translate(edt.getText().toString().trim(),languagePair);
@@ -334,13 +334,13 @@ public class StoryActivity extends AppCompatActivity {
         protected void onPostExecute(String result) {
             final Dialog dialog = new Dialog(context);
             dialog.setContentView(R.layout.custom_alertdialog);
-            dialog.setTitle("Kelime Anlamı");
+            dialog.setTitle("Meaning of the word");
 
             // set the custom dialog components - text, image and button
             TextView text = (TextView) dialog.findViewById(R.id.word);
             TextView text1 = (TextView) dialog.findViewById(R.id.main);
             if(resultString.equals(sozcuk)){
-                text1.setText("Yanlış bir kelime girdiniz. Tekrar deneyiniz.");
+                text1.setText("You have written a wrong word. Try again.");
             }
             else{
                 text.setText(edt.getText().toString()+" :");
