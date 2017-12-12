@@ -212,38 +212,13 @@ public class StoryActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.action_sharing:
-                final Dialog dialog = new Dialog(context);
-                dialog.setContentView(R.layout.custom_sharedialog);
-                twitter=(Button)dialog.findViewById(R.id.twitter);
-                whatsapp=(Button)dialog.findViewById(R.id.whatsapp);
-                twitter.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Intent intent = new Intent();
-                        intent.setAction(Intent.ACTION_SEND);
-                        intent.putExtra(Intent.EXTRA_TEXT, icerik.getText().toString());
-                        intent.setType("text/plain");
-                        intent.setPackage("com.twitter.android");
-                        startActivity(intent);
-                        dialog.dismiss();
-
-                    }
-                });
-                whatsapp.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Intent intent = new Intent();
-                        intent.setAction(Intent.ACTION_SEND);
-                        intent.putExtra(Intent.EXTRA_TEXT, icerik.getText().toString());
-                        intent.setType("text/plain");
-                        intent.setPackage("com.whatsapp");
-                        startActivity(intent);
-                        dialog.dismiss();
-                    }
-                });
-                dialog.show();
-                return true;
+            case R.id.whatsapp:
+                Intent intent1 = new Intent();
+                intent1.setAction(Intent.ACTION_SEND);
+                intent1.putExtra(Intent.EXTRA_TEXT, icerik.getText().toString());
+                intent1.setType("text/plain");
+                intent1.setPackage("com.whatsapp");
+                startActivity(intent1);
             default:
                 return super.onOptionsItemSelected(item);
         }

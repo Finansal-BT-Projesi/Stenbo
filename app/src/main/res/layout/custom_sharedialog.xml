@@ -1,37 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <TextView
-        android:id="@+id/Share"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="19dp"
-        android:layout_marginStart="19dp"
-        android:layout_marginTop="17dp" />
-
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="0dp"
+    android:orientation="horizontal"
+   >
     <Button
         android:id="@+id/twitter"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/Share"
-        android:layout_alignStart="@+id/Share"
-        android:layout_below="@+id/Share"
-        android:layout_marginTop="25dp"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_alignParentRight="true"
         android:background="@drawable/twitter" />
 
     <Button
         android:id="@+id/whatsapp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/twitter"
-        android:layout_marginLeft="17dp"
-        android:layout_marginStart="17dp"
-        android:background="@drawable/whatsapp"
-        android:layout_toEndOf="@+id/twitter"
-        android:layout_toRightOf="@+id/twitter" />
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/twitter"
+        android:background="@drawable/whatsapp" />
 </RelativeLayout>
